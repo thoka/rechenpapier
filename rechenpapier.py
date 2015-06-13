@@ -27,7 +27,6 @@ def grid(c,nx=50,ny=70,d = 4*mm):
         else:
             c.setLineWidth(0.1*mm)
 
-
     clipp_rect = rect(c,0,0,d*nx,d*ny)
     c.setLineWidth(0.1*mm)
     c.setStrokeColor(white)
@@ -57,24 +56,20 @@ def grid(c,nx=50,ny=70,d = 4*mm):
 
 c = canvas.Canvas("rechenpapier.pdf",pagesize=A4)
 
-
-c.translate(0.5*cm,5*cm)
-grid(c,nx=10,ny=10,d=20*mm)
+c.translate(0.5*cm,1*cm)
+grid(c,nx=50,ny=70,d=4*mm)
 c.showPage()
-
-
-c.translate(0.5*cm,1.5*cm)
-grid(c,nx=15,ny=15,d=12.54*mm)
-c.showPage()
-
 
 c.translate(0.5*cm,1.5*cm)
 grid(c,nx=20,ny=20,d=10*mm)
 c.showPage()
 
-c.translate(0.5*cm,1*cm)
-grid(c)
+c.translate(0.5*cm,1.5*cm)
+grid(c,nx=15,ny=15,d=12.54*mm)
 c.showPage()
 
+c.translate(0.5*cm,5*cm)
+grid(c,nx=10,ny=10,d=20*mm)
+c.showPage()
 
 c.save()
